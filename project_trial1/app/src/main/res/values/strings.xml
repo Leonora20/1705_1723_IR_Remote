@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">project_trial1</string>
+    <string name="action_about">About</string>
+    <string name="app_author">1705</string>
+    <string name="app_descrip">Wireless Remote using android studio</string>
+    <string name="app_version">1.0</string>
+    <string name="app_info">app will act as a wireless remote for 4 devices</string>
+    <string name="device_discovery_started">Looking for nearby devices&#8230;</string>
+    <string name="device_already_paired">This device is already paired!</string>
+    <string name="device_pairing_success">Device successfully paired!</string>
+    <string name="enabling_bluetooth">Turning on Bluetooth and looking for devices&#8230;</string>
+    <string name="device_discovery_stopped">Device discovery cancelled</string>
+    <string name="empty_list_message">No nearby devices found. Tap on the bottom-right button to start a new device discovery.</string>
+    <string name="bluetooth_not_available_message">It seems that this device doesn\'t have a Bluetooth controller available. \nBlue Pair works only with Bluetooth, so please try again on a different device. \nThe app will be now terminated.</string>
+    <string name="bluetooth_not_available_title">Bluetooth not available</string>
 </resources>

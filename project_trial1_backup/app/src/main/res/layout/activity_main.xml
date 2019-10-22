@@ -23,15 +23,15 @@
             android:layout_height="140dp" app:srcCompat="@drawable/projectornew2" android:id="@+id/projector"
             android:layout_marginTop="160dp" android:layout_toRightOf="@+id/ac"
             android:layout_marginRight="40dp" android:layout_marginLeft="40dp"
-            android:backgroundTint="#FFF1FF01"/>
+            android:backgroundTint="@color/colorPrimary"/>
     <ImageButton
             android:layout_width="140dp"
-            android:layout_height="140dp" app:srcCompat="@drawable/speaker" android:id="@+id/speaker"
+            android:layout_height="140dp" app:srcCompat="@drawable/laptop" android:id="@+id/dvd"
             android:layout_marginLeft="40dp" android:layout_marginTop="340dp"
-            android:backgroundTint="#FFF1FF01"/>
+            android:backgroundTint="@color/colorPrimary"/>
     <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp" app:srcCompat="@drawable/tvnew" android:id="@+id/tv"
-            android:layout_toRightOf="@+id/speaker" android:layout_marginTop="340dp" android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/dvd" android:layout_marginTop="340dp" android:layout_marginLeft="40dp"
             android:backgroundTint="@android:color/holo_blue_bright"/>
 </RelativeLayout>
