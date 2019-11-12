@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/viewpager_padding">
+
+
+        <!-- Directional keys -->
+        <include layout="@layout/part_dpad" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <!-- First line of controls -->
+
+            <TableRow
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/cmdTest"
+                    style="@style/command_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/test"
+                    android:text="@string/cmd_test" />
+
+                <Button
+                    android:id="@+id/cmdGomStretch"
+                    style="@style/command_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/fullscreen"
+                    android:text="@string/cmd_gom_stretch" />
+
+                <Button
+                    android:id="@+id/cmdSwitch"
+                    style="@style/command_button"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/switch_window"
+                    android:text="@string/cmd_switch_window" />
+            </TableRow>
+
+            <!-- Media controls -->
+            <include layout="@layout/part_media_controls" />
+
+            <SeekBar
+                android:id="@+id/sbVolume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100" />
+
+            <TableRow android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnAppLauncher"
+                    style="@style/command_button"
+                    android:contentDescription="@string/btn_app_launcher"
+                    android:src="@drawable/ic_app_launcher" />
+
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/toastText"
+        style="@style/VolumeToastFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alpha="0"
+        android:text="@string/progress"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="90sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</FrameLayout>

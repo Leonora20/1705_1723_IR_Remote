@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url 'http://dl.bintray.com/cyrillrx/maven' }
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+    // customize apk output names
+    // For each application variants (release, debug, etc.)
+    String date = (new Date()).format('yyyy-MM-dd')
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "${date}_uremote_v${variant.versionName}(${variant.versionCode})_${variant.flavorName}-${variant.buildType.name}.apk"
+        }
+    }
+
+    defaultConfig {
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        applicationId "com.cyrillrx.uremote"
+        versionCode 1
+        versionName "0.8.0"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile rootProject.file('../keystore/debug.keystore')
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+
+            debuggable true
+            jniDebuggable true
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Android X libraries
+    implementation "androidx.appcompat:appcompat:1.0.2"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    // Testing
+    testImplementation 'junit:junit:4.12'
+
+    // External libraries
+
+    implementation 'com.cyrillrx:logger:1.6.1'
+    implementation 'com.cyrillrx:tracker:0.9.0'
+
+    implementation 'com.cyrillrx.android:core:0.5.1'
+    implementation 'com.cyrillrx.android:notifier:0.1.2'
+    implementation 'com.cyrillrx.android:remote:0.0.2'
+    implementation 'com.cyrillrx.android:logger-logcat:1.6.1'
+    implementation 'com.cyrillrx.android:logger-crashlytics:1.6.1'
+
+    implementation 'com.google.protobuf:protobuf-java:3.4.0'
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') { transitive = true }
+}

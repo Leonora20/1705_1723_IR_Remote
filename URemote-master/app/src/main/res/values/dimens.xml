@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- text sizes -->
+
+    <dimen name="text_console">6sp</dimen>
+
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_default">16sp</dimen>
+    <dimen name="text_medium">20sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_common">16dp</dimen>
+
+    <!-- Other -->
+
+    <dimen name="action_icon">48dp</dimen>
+    <dimen name="viewpager_padding">16dp</dimen>
+    <dimen name="media_button_width">60dp</dimen>
+    <dimen name="media_button_height">60dp</dimen>
+    <dimen name="key_height">45dp</dimen>
+
+</resources>

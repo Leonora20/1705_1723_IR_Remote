@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.cyrillrx.uremote"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Computer related activities -->
+
+        <activity
+            android:name=".ui.ComputerActivity"
+            android:label="@string/title_computer"
+            android:theme="@style/NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.computer.ServerListActivity"
+            android:theme="@style/PopupTheme" />
+        <activity android:name=".ui.computer.ServerEditActivity" />
+        <activity android:name=".ui.computer.LoadServerActivity" />
+        <activity
+            android:name=".ui.AppLauncherActivity"
+            android:label="@string/title_application_launcher"
+            android:theme="@style/PopupTheme" />
+
+        <!-- Others activities -->
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:label="@string/title_settings" />
+        <activity
+            android:name=".ui.nao.OpenGLActivity"
+            android:label="@string/title_3d_cube" />
+        <activity
+            android:name=".ui.LightActivity"
+            android:label="@string/title_lights" />
+        <activity
+            android:name=".ui.RobotActivity"
+            android:label="@string/title_robots" />
+        <activity
+            android:name=".ui.TvActivity"
+            android:label="@string/title_tv" />
+        <activity
+            android:name=".ui.HexHomeActivity"
+            android:label="@string/app_name" />
+
+        <!-- Widgets configuration Activities -->
+
+        <activity
+            android:name=".widget.MediaWidgetConfigureActivity"
+            android:theme="@style/PopupTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".widget.DPadWidgetConfigureActivity"
+            android:theme="@style/PopupTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <!-- Widgets Providers -->
+
+        <receiver
+            android:name=".widget.MediaWidgetProvider"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/widget_media_controller">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_media_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.DPadWidgetProvider"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/widget_dpad">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_dpad_info" />
+        </receiver>
+
+        <!-- Services -->
+
+        <service android:name=".service.BluetoothService" />
+        <service android:name=".service.SendRequestService" />
+
+        <!-- External APIs -->
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="7986327b08b775719b8d4de12506e38dc83980cd" />
+    </application>
+
+</manifest>

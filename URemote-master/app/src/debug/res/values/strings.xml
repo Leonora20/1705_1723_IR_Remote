@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="widget_media_controller">Media controller debug</string>
+    <string name="widget_dpad">D-pad debug</string>
+
+</resources>
