@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".IR_AC">>
+
+    <Button
+        android:id="@+id/on_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/on" />
+
+    <Button
+        android:id="@+id/vdown_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/on_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/volumedown" />
+
+    <Button
+        android:id="@+id/vup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/on_btn"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/volumeup" />
+
+    <Button
+        android:id="@+id/off_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/on_btn"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="165dp"
+        android:background="@drawable/off" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="30dp"
+        android:text="IR Controls"
+        android:textSize="36sp" />
+
+</RelativeLayout>

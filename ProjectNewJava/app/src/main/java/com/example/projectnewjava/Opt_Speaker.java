@@ -15,11 +15,20 @@ public class Opt_Speaker extends AppCompatActivity {
         setContentView(R.layout.activity_opt_speaker);
 
         Button bluetooth = (Button) findViewById(R.id.bluetooth_btn_speaker);
+        Button ir = (Button) findViewById(R.id.ir_btn_speaker);
 
         bluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myintent = new Intent(view.getContext(), MainActivityBluetooth.class);
+                view.getContext().startActivity(myintent);
+            }
+        });
+
+        ir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), IR_Speaker.class);
                 view.getContext().startActivity(myintent);
             }
         });

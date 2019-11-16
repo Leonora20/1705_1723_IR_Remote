@@ -32,6 +32,6 @@
     <ImageButton
             android:layout_width="140dp"
             android:layout_height="140dp" app:srcCompat="@drawable/tvnew" android:id="@+id/tv"
-            android:layout_toRightOf="@+id/speaker" android:layout_marginTop="340dp" android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@id/speaker" android:layout_marginTop="340dp" android:layout_marginLeft="40dp"
             android:backgroundTint="@android:color/holo_blue_bright"/>
 </RelativeLayout>

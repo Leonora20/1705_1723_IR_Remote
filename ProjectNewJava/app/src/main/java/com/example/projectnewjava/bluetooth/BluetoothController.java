@@ -1,10 +1,12 @@
 package com.example.projectnewjava.bluetooth;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
@@ -119,6 +121,7 @@ public class BluetoothController implements Closeable {
      * @param device the device to pair with.
      * @return true if the pairing was successful, false otherwise.
      */
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     public boolean pair(BluetoothDevice device) {
         // Stops the discovery and then creates the pairing.
         if (bluetooth.isDiscovering()) {

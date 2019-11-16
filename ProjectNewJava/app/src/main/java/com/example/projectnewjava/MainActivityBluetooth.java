@@ -59,7 +59,7 @@ public class MainActivityBluetooth extends AppCompatActivity implements ListInte
         // Changes the theme back from the splashscreen. It's very important that this is called
         // BEFORE onCreate.
         SystemClock.sleep(getResources().getInteger(R.integer.splashscreen_duration));
-        setTheme(R.style.AppTheme_NoActionBar);
+        //setTheme(R.style.AppTheme_NoActionBar);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_bluetooth);
@@ -160,8 +160,8 @@ public class MainActivityBluetooth extends AppCompatActivity implements ListInte
         View messageView = getLayoutInflater().inflate(R.layout.about, null, false);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setTitle(R.string.app_name);
+        //builder.setIcon(R.mipmap.ic_launcher);
+        //builder.setTitle(R.string.app_name);
         builder.setView(messageView);
         builder.create();
         builder.show();

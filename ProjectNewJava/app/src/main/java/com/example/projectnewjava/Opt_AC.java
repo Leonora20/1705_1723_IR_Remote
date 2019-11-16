@@ -15,11 +15,20 @@ public class Opt_AC extends AppCompatActivity {
         setContentView(R.layout.activity_opt_ac);
 
         Button bluetooth = (Button) findViewById(R.id.bluetooth_btn_ac);
+        Button ir = (Button) findViewById(R.id.ir_btn_ac);
 
         bluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myintent = new Intent(view.getContext(), MainActivityBluetooth.class);
+                view.getContext().startActivity(myintent);
+            }
+        });
+
+        ir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), IR_AC.class);
                 view.getContext().startActivity(myintent);
             }
         });
