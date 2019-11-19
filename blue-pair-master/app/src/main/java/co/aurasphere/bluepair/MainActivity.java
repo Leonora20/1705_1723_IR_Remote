@@ -1,26 +1,3 @@
-/*
- * MIT License
- * <p>
- * Copyright (c) 2017 Donato Rimenti
- * <p>
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * <p>
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * <p>
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package co.aurasphere.bluepair;
 
 import android.app.ProgressDialog;
@@ -48,11 +25,6 @@ import co.aurasphere.bluepair.view.DeviceRecyclerViewAdapter;
 import co.aurasphere.bluepair.view.ListInteractionListener;
 import co.aurasphere.bluepair.view.RecyclerViewProgressEmptySupport;
 
-/**
- * Main Activity of this application.
- *
- * @author Donato Rimenti
- */
 public class MainActivity extends AppCompatActivity implements ListInteractionListener<BluetoothDevice> {
 
     /**
@@ -82,9 +54,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
 
     private RecyclerViewProgressEmptySupport recyclerView;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -160,9 +129,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         });
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -170,9 +136,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -204,9 +167,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         builder.show();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onItemClick(BluetoothDevice device) {
         Log.d(TAG, "Item clicked : " + BluetoothController.deviceToString(device));
@@ -230,9 +190,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void startLoading() {
         this.recyclerView.startLoading();
@@ -241,9 +198,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         this.fab.setImageResource(R.drawable.ic_bluetooth_searching_white_24dp);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void endLoading(boolean partialResults) {
         this.recyclerView.endLoading();
@@ -254,9 +208,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void endLoadingWithDialog(boolean error, BluetoothDevice device) {
         if (this.bondingProgressDialog != null) {

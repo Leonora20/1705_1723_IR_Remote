@@ -1,26 +1,3 @@
-/*
- * MIT License
- * <p>
- * Copyright (c) 2017 Donato Rimenti
- * <p>
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * <p>
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * <p>
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
 package co.aurasphere.bluepair.view;
 
 import android.bluetooth.BluetoothDevice;
@@ -38,12 +15,6 @@ import co.aurasphere.bluepair.R;
 import co.aurasphere.bluepair.bluetooth.BluetoothController;
 import co.aurasphere.bluepair.bluetooth.BluetoothDiscoveryDeviceListener;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link BluetoothDevice} and makes a call to the
- * specified {@link ListInteractionListener} when the element is tapped.
- *
- * @author Donato Rimenti
- */
 public class DeviceRecyclerViewAdapter
         extends RecyclerView.Adapter<DeviceRecyclerViewAdapter.ViewHolder>
         implements BluetoothDiscoveryDeviceListener {
@@ -73,9 +44,6 @@ public class DeviceRecyclerViewAdapter
         this.listener = listener;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -83,9 +51,6 @@ public class DeviceRecyclerViewAdapter
         return new ViewHolder(view);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = devices.get(position);
@@ -119,17 +84,11 @@ public class DeviceRecyclerViewAdapter
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getItemCount() {
         return devices.size();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onDeviceDiscovered(BluetoothDevice device) {
         listener.endLoading(true);
@@ -137,9 +96,6 @@ public class DeviceRecyclerViewAdapter
         notifyDataSetChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onDeviceDiscoveryStarted() {
         cleanView();
@@ -154,42 +110,27 @@ public class DeviceRecyclerViewAdapter
         notifyDataSetChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setBluetoothController(BluetoothController bluetooth) {
         this.bluetooth = bluetooth;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onDeviceDiscoveryEnd() {
         listener.endLoading(false);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onBluetoothStatusChanged() {
         // Notifies the Bluetooth controller.
         bluetooth.onBluetoothStatusChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onBluetoothTurningOn() {
         listener.startLoading();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onDevicePairingEnded() {
         if (bluetooth.isPairingInProgress()) {
@@ -256,9 +197,6 @@ public class DeviceRecyclerViewAdapter
             mDeviceAddressView = (TextView) view.findViewById(R.id.device_address);
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public String toString() {
             return super.toString() + " '" + BluetoothController.deviceToString(mItem) + "'";
