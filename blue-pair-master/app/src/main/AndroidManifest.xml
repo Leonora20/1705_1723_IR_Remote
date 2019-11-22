@@ -26,6 +26,12 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".Opt_AC"></activity>
         <activity android:name=".Opt_Speaker"></activity>
+        <activity android:name=".Opt_Projector"></activity>
+        <activity android:name=".Opt_TV"></activity>
+        <activity android:name=".AC_MainActivity"></activity>
+        <activity android:name=".TV_MainActivity"></activity>
+        <activity android:name=".Projector_MainActivity"></activity>
+        <activity android:name=".Speaker_MainActivity"></activity>
     </application>
 
 </manifest>

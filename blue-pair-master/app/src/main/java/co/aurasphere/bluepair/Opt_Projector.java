@@ -1,4 +1,38 @@
 package co.aurasphere.bluepair;
 
-public class Opt_Projector  {
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+
+public class Opt_Projector   extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_opt_projector);
+
+        this.setTitle("IR/Bluetooth");
+
+        Button projector_bluetooth = (Button) findViewById(R.id.bluetooth_btn_projector);
+
+        projector_bluetooth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), MainActivity.class);
+                view.getContext().startActivity(myintent);
+            }
+        });
+
+        Button projector_ir = (Button) findViewById(R.id.ir_btn_projector);
+
+        /*projector_ir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), Projector_MainActivity.class);
+                view.getContext().startActivity(myintent);
+            }
+        });*/
+    }
 }

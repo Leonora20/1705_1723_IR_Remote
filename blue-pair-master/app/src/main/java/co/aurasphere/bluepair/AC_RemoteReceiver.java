@@ -1,4 +1,4 @@
-package com.example.acremote;
+package co.aurasphere.bluepair;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,11 +6,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.ConsumerIrManager;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
-import androidx.annotation.RequiresApi;
-
-public class RemoteReceiver extends BroadcastReceiver {
+public class AC_RemoteReceiver extends BroadcastReceiver {
 
     private String log_tag = "ir";
     private int status = 0;
@@ -20,7 +19,7 @@ public class RemoteReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onReceive(Context context, Intent intent) {
-        SharedPreferences prefs = context.getSharedPreferences("com.example.acremote_preferences", Context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences("co.aurasphere.bluepair_preferences", Context.MODE_PRIVATE);
         status = prefs.getInt("status", 0);
         start = prefs.getInt("start", 1);
         Log.e(log_tag, "broadcast received!" +Integer.toString(start));
@@ -62,15 +61,15 @@ public class RemoteReceiver extends BroadcastReceiver {
         transmitIR(stop_frame, c);
     }
 
-    /*@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void onCoolClicked(Context c){
-            int cool_frame[] = {38000,346,173,28,60,29,16,28,16,28,60,28,16,28,17,28,60,29,16,28,16,28,16,29,16,28,60,29,16,28,16,29,16,29,16,28,16,29,16,28,16,28,16,29,16,28,16,28,16,29,16,28,16,29,16,29,16,28,16,29,60,28,16,29,60,28,16,29,16,28,60,29,16,28,5000};
-            transmitIR(cool_frame, c);
+        int cool_frame[] = {38000,346,173,28,60,29,16,28,16,28,60,28,16,28,17,28,60,29,16,28,16,28,16,29,16,28,60,29,16,28,16,29,16,29,16,28,16,29,16,28,16,28,16,29,16,28,16,28,16,29,16,28,16,29,16,29,16,28,16,29,60,28,16,29,60,28,16,29,16,28,60,29,16,28,5000};
+        transmitIR(cool_frame, c);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void onFanClicked(Context c){
         int fan_frame[] = {38000,346,173,30,60,30,60,29,16,30,60,29,60,30,16,29,60,29,16,29,16,29,16,29,16,29,60,29,16,30,16,29,16,29,16,30,16,29,16,29,16,29,16,29,16,29,16,29,16,29,16,29,16,30,16,29,16,30,16,29,60,30,16,29,60,30,16,29,16,29,60,29,16,30,5000};
         transmitIR(fan_frame, c);
-    }*/
+    }
 }

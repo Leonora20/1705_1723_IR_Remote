@@ -15,12 +15,22 @@ public class Opt_AC extends AppCompatActivity {
 
         this.setTitle("IR/Bluetooth");
 
-        Button bluetooth = (Button) findViewById(R.id.bluetooth_btn_ac);
+        Button ac_bluetooth = (Button) findViewById(R.id.bluetooth_btn_ac);
 
-        bluetooth.setOnClickListener(new View.OnClickListener() {
+        ac_bluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myintent = new Intent(view.getContext(), MainActivity.class);
+                view.getContext().startActivity(myintent);
+            }
+        });
+
+        Button ac_ir = (Button) findViewById(R.id.ir_btn_ac);
+
+        ac_ir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), AC_MainActivity.class);
                 view.getContext().startActivity(myintent);
             }
         });

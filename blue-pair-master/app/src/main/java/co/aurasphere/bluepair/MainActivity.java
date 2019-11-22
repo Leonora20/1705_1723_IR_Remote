@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         View messageView = getLayoutInflater().inflate(R.layout.about, null, false);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setIcon(R.mipmap.logov2);
         builder.setTitle(R.string.app_name);
         builder.setView(messageView);
         builder.create();
@@ -173,6 +173,7 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         if (bluetooth.isAlreadyPaired(device)) {
             Log.d(TAG, "Device already paired!");
             Toast.makeText(this, R.string.device_already_paired, Toast.LENGTH_SHORT).show();
+
         } else {
             Log.d(TAG, "Device not paired. Pairing.");
             boolean outcome = bluetooth.pair(device);
@@ -232,18 +233,12 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
 
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onDestroy() {
         bluetooth.close();
         super.onDestroy();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -257,9 +252,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onStop() {
         super.onStop();
