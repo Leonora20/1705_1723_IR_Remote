@@ -27,12 +27,12 @@ public class Opt_Speaker extends AppCompatActivity {
 
         Button speaker_ir = (Button) findViewById(R.id.ir_btn_speaker);
 
-        /*speaker_ir.setOnClickListener(new View.OnClickListener() {
+        speaker_ir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myintent = new Intent(view.getContext(), Speaker_MainActivity.class);
                 view.getContext().startActivity(myintent);
             }
-        });*/
+        });
     }
 }

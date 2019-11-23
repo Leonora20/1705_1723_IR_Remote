@@ -1,4 +1,4 @@
-package co.aurasphere.bluepair;
+package com.example.acremote;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.ConsumerIrManager;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
 
-public class AC_RemoteReceiver extends BroadcastReceiver {
+import androidx.annotation.RequiresApi;
+
+public class TV_RemoteReceiver extends BroadcastReceiver {
 
     private String log_tag = "ir";
     private int status = 0;
@@ -19,7 +20,7 @@ public class AC_RemoteReceiver extends BroadcastReceiver {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onReceive(Context context, Intent intent) {
-        SharedPreferences prefs = context.getSharedPreferences("co.aurasphere.bluepair_preferences", Context.MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences("com.example.acremote_preferences", Context.MODE_PRIVATE);
         status = prefs.getInt("status", 0);
         start = prefs.getInt("start", 1);
         Log.e(log_tag, "broadcast received!" +Integer.toString(start));
@@ -27,10 +28,10 @@ public class AC_RemoteReceiver extends BroadcastReceiver {
 
         if (start == 0) {
             start = 1;
-            startAC(context);
+            startTV(context);
         } else if (start == 1) {
             start = 0;
-            stopAC(context);
+            stopTV(context);
         }
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("start", start);
@@ -50,13 +51,13 @@ public class AC_RemoteReceiver extends BroadcastReceiver {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public static void startAC(Context c) {
+    public static void startTV(Context c) {
         int start_frame[] = {346,173,29,60,28,17,28,16,28,16,29,16,29,16,28,60,28,16,28,16,29,16,28,16,28,60,28,16,28,17,28,16,28,16,28,17,28,16,28,16,29,16,29,16,28,16,29,16,28,16,28,17,28,16,28,16,28,17,28,60,29,16,28,60,29,16,28,16,28,60,28,16,29,5000};
         transmitIR(start_frame, c);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public static void stopAC(Context c) {
+    public static void stopTV(Context c) {
         int stop_frame[] = {346,173,28,60,28,16,28,16,29,60,28,60,28,16,29,60,28,16,28,17,28,16,28,17,28,60,29,16,28,16,28,16,29,16,28,16,28,16,29,16,28,16,28,17,28,16,28,16,29,16,28,16,28,17,28,16,28,16,28,60,28,16,28,60,28,17,28,16,28,60,28,16,28,5000};
         transmitIR(stop_frame, c);
     }

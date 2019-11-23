@@ -27,12 +27,12 @@ public class Opt_Projector   extends AppCompatActivity {
 
         Button projector_ir = (Button) findViewById(R.id.ir_btn_projector);
 
-        /*projector_ir.setOnClickListener(new View.OnClickListener() {
+        projector_ir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myintent = new Intent(view.getContext(), Projector_MainActivity.class);
                 view.getContext().startActivity(myintent);
             }
-        });*/
+        });
     }
 }
