@@ -13,7 +13,7 @@ public class Opt_Speaker extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opt_speaker);
 
-        this.setTitle("IR/Bluetooth");
+        this.setTitle("");
 
         Button speaker_bluetooth = (Button) findViewById(R.id.bluetooth_btn_speaker);
 

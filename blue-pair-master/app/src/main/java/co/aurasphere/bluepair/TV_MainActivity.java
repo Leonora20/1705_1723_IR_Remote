@@ -35,6 +35,8 @@ public class TV_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tv_ir_activity_main);
 
+        this.setTitle("");
+
         Log.e(log_tag, "TV Main activity launched");
 
         settings = getApplicationContext().getSharedPreferences("co.aurasphere.bluepair_preferences", 0);

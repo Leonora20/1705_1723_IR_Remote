@@ -13,7 +13,7 @@ public class Opt_TV  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opt_tv);
 
-        this.setTitle("IR/Bluetooth");
+        this.setTitle("");
 
         Button tv_bluetooth = (Button) findViewById(R.id.bluetooth_btn_tv);
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bluetooth Pairing</string>
+    <string name="app_name"></string>
     <string name="action_about">About</string>
-    <string name="app_author">Author : Leo</string>
+    <string name="app_author">Author : Leo|Abhi</string>
     <string name="device_discovery_started">Looking for nearby devices&#8230;</string>
     <string name="device_already_paired">This device is already paired!</string>
     <string name="device_pairing_success">Device successfully paired!</string>

@@ -13,7 +13,7 @@ public class Opt_Projector   extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opt_projector);
 
-        this.setTitle("IR/Bluetooth");
+        this.setTitle("");
 
         Button projector_bluetooth = (Button) findViewById(R.id.bluetooth_btn_projector);
 

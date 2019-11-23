@@ -35,6 +35,8 @@ public class Speaker_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.speaker_ir_activity_main);
 
+        this.setTitle("");
+
         Log.e(log_tag, "Speaker Main activity launched");
 
         settings = getApplicationContext().getSharedPreferences("co.aurasphere.bluepair_preferences", 0);

@@ -35,6 +35,8 @@ public class AC_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_ir_activity_main);
 
+        this.setTitle("");
+
         Log.e(log_tag, "AC Main activity launched");
 
         settings = getApplicationContext().getSharedPreferences("co.aurasphere.bluepair_preferences", 0);

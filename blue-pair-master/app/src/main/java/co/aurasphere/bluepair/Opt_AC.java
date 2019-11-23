@@ -13,7 +13,7 @@ public class Opt_AC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opt_ac);
 
-        this.setTitle("IR/Bluetooth");
+        this.setTitle("");
 
         Button ac_bluetooth = (Button) findViewById(R.id.bluetooth_btn_ac);
 

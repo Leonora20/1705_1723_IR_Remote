@@ -15,11 +15,13 @@
         android:id="@+id/b2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/on_off"
         android:onClick="onB2Clicked"
-        android:text="button" />
+        android:text="button"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="36dp" />
 
     <Button
         android:id="@+id/v_down"

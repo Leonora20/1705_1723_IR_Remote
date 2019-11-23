@@ -160,7 +160,6 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         View messageView = getLayoutInflater().inflate(R.layout.about, null, false);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.mipmap.logov2);
         builder.setTitle(R.string.app_name);
         builder.setView(messageView);
         builder.create();

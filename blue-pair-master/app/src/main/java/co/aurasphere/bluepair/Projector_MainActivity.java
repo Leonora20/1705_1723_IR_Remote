@@ -35,6 +35,8 @@ public class Projector_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.projector_ir_activity_main);
 
+        this.setTitle("");
+
         Log.e(log_tag, "Projector Main activity launched");
 
         settings = getApplicationContext().getSharedPreferences("co.aurasphere.bluepair_preferences", 0);

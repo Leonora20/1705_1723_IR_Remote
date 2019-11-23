@@ -13,7 +13,7 @@ public class FirstPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firstpage);
 
-        this.setTitle("Wireless Remote App");
+        this.setTitle("");
 
         ImageButton ac = (ImageButton) findViewById(R.id.ac);
         ImageButton projector = (ImageButton) findViewById(R.id.projector);

@@ -11,6 +11,6 @@
     <Button
         android:layout_width="181dp"
         android:layout_height="167dp" android:id="@+id/bluetooth_btn_ac"
-        android:background="@drawable/ic_bluetooth_black_24dp"
+        android:background="@drawable/bluetoothnew"
         android:layout_marginLeft="110dp"/>
 </LinearLayout>
