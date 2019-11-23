@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:text="Bluetooth/IR Functionality for Remote Control"
+        android:text="Bluetooth Functionality for Remote Control"
         android:textColor="?android:attr/textColorPrimary" />
 
     <TextView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dip"
         android:textSize="16sp"
-        android:text="1705"
+        android:text="1705|1723"
         android:textColor="?android:attr/textColorPrimary" />
 
 </LinearLayout>

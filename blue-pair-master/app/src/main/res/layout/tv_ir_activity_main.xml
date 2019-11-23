@@ -30,8 +30,8 @@
         android:layout_below="@id/b2"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/vdown"
-        android:onClick="onvdownClicked" />
+        android:background="@drawable/vdown"/>
+        <!--android:onClick="onvdownClicked" -->
 
     <Button
         android:id="@+id/v_up"
@@ -41,7 +41,7 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@id/v_down"
         android:layout_below="@id/b2"
-        android:background="@drawable/vup"
-        android:onClick="onvupClicked" />
+        android:background="@drawable/vup"/>
+        <!--android:onClick="onvupClicked" -->
 
 </RelativeLayout>

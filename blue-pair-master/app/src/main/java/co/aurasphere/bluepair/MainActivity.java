@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements ListInteractionLi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        this.setTitle("");
 
         // Sets up the RecyclerView.
         this.recyclerViewAdapter = new DeviceRecyclerViewAdapter(this);

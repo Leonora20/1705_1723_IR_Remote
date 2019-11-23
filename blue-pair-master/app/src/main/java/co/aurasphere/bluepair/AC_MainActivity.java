@@ -39,6 +39,24 @@ public class AC_MainActivity extends AppCompatActivity {
 
         Log.e(log_tag, "AC Main activity launched");
 
+        /*Button cool = (Button) findViewById(R.id.cool);
+        cool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), AC_MainActivity.class);
+                view.getContext().startActivity(myintent);
+            }
+        });
+
+        Button fan = (Button) findViewById(R.id.fan);
+        fan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myintent = new Intent(view.getContext(), AC_MainActivity.class);
+                view.getContext().startActivity(myintent);
+            }
+        });*/
+
         settings = getApplicationContext().getSharedPreferences("co.aurasphere.bluepair_preferences", 0);
         status = settings.getInt("status", 0);
 
@@ -74,28 +92,6 @@ public class AC_MainActivity extends AppCompatActivity {
     "Fan Medium"		: "38000,346,173,28,60,28,16,28,17,28,60,29,16,28,60,29,60,28,16,29,16,28,16,28,17,28,60,28,16,28,16,29,16,28,16,28,16,29,16,28,16,28,16,28,17,28,16,28,17,28,16,28,16,28,17,28,16,28,17,28,60,28,17,28,60,28,17,28,16,28,60,28,16,28,5000",
     "Fan Low"			: "346,173,28,60,28,16,28,16,29,60,28,60,28,16,29,60,28,16,28,17,28,16,28,17,28,60,29,16,28,16,28,16,29,16,28,16,28,16,29,16,28,16,28,17,28,16,28,16,29,16,28,16,28,17,28,16,28,16,28,60,28,16,28,60,28,17,28,16,28,60,28,16,28,5000",
     */
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/ //Removed yesterday
 
     public void onB1Clicked(View v) {
 
